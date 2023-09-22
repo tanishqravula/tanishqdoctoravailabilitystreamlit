@@ -40,7 +40,7 @@ def app(df, X, Y):
     SMS_received= st.slider("SMS_received", float(df["SMS_received"].min()), float(df["SMS_received"].max()))
 
     # Create a list to store all the features
-    features = [PatientId ,AppointmentID ,,Age,Scholarship,Hipertension,Diabetes,Alcoholism,Handcap,SMS_received]
+    features = [PatientId ,AppointmentID ,Age,Scholarship,Hipertension,Diabetes,Alcoholism,Handcap,SMS_received]
 
     # Create a button to predict
     if st.button("Predict"):
