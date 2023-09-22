@@ -8,7 +8,7 @@ from web_functions import load_data
 import pandas as pd
 
 # Import pages
-from Tabs import home, data, predict, visualise
+from Tabs import home, data, predict
 
 # Configure the app
 st.set_page_config(
@@ -22,8 +22,7 @@ st.set_page_config(
 Tabs = {
     "Home": home,
     "Data Info": data,
-    "Prediction": predict,
-    "Visualisation": visualise
+    "Prediction": predict
     
 }
 
