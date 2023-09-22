@@ -12,7 +12,7 @@ from Tabs import home, data, predict, visualise
 
 # Configure the app
 st.set_page_config(
-    page_title = 'Stress Level Detector',
+    page_title = 'Appointment Availability Checker',
     page_icon = 'heavy_exclamation_mark',
     layout = 'wide',
     initial_sidebar_state = 'auto'
@@ -39,7 +39,7 @@ df,X,Y=load_data()
 
 
 # Call the app funciton of selected page to run
-if page in ["Prediction", "Visualisation"]:
+if page in ["Prediction"]:
     Tabs[page].app(df, X, Y)
 elif (page == "Data Info"):
     Tabs[page].app(df)
