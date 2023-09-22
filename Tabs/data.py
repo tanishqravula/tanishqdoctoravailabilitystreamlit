@@ -49,7 +49,7 @@ def app(df):
     st.markdown("""
                     <p style="font-size:24px">
                         <a 
-                            href="https://raw.githubusercontent.com/DataMinati/Streamlit-Database/main/SaYoPillow.csv"
+                            href="https://www.kaggle.com/datasets/joniarroba/noshowappointments"
                             target=_blank
                             style="text-decoration:none;"
                         >Get Dataset
