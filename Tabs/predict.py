@@ -31,9 +31,9 @@ def app(df, X, Y):
     # Take input of features from the user.
     PatientId = st.slider("PatientId", int(df["PatientId"].min()), int(df["PatientId"].max()))
     AppointmentID = st.slider("AppointmentID", int(df["AppointmentID"].min()), int(df["AppointmentID"].max()))
-    Gender = st.slider("Gender", "M","F")
-    ScheduledDay = st.slider("ScheduledDay", float(df["ScheduledDay"].min()), float(df["ScheduledDay"].max()))
-    AppointmentDay= st.slider("AppointmentDay", float(df["AppointmentDay"].min()), float(df["AppointmentDay"].max()))
+    Gender = st.text_input("Select Gender M and F")
+    ScheduledDay = st.text_input("ScheduledDay",format="%Y-%m-%dT%H:%M:%SZ")
+    AppointmentDay= st.text_input("AppointmentDay",format="%Y-%m-%dT%H:%M:%SZ")
     Age = st.slider("Age", float(df["Age"].min()), float(df["Age"].max()))
     Neighbourhood = st.text_input("Neighbourhood")
     Scholarship= st.slider("Scholarship", float(df["Scholarship"].min()), float(df["Scholarship"].max()))
