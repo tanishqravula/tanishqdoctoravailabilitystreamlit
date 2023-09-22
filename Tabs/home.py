@@ -10,6 +10,6 @@ def app():
     st.title("Appointment Availability Checker")
 
     # Add image to the home page
-    st.image("images/home.png")
+    st.image("home.png")
 
     # Add brief describtion of your web app
