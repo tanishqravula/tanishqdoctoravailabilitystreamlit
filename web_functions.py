@@ -20,8 +20,8 @@ def load_data():
     
 
     # Perform feature and target split
-    X = df[["pid","appid","gr","sd","ad","age","ng","sc","ht","db","al","hp","sr"]]
-    y = df['ns']
+    X = df[["PatientId","AppointmentID","Gender","ScheduledDay","AppointmentDay","Age","Neighbourhood","Scholarship","Hipertension","Diabetes","Alcoholism","Handcap","SMS_received"]]
+    y = df['No-show']
 
     return df, X, y
 
