@@ -12,7 +12,7 @@ def load_data():
     """This function returns the preprocessed data"""
 
     # Load the Diabetes dataset into DataFrame.
-    df = pd.read_csv('Stress-Level-Detector/Stress.csv')
+    df = pd.read_csv('KaggleV2-May-2016.csv')
 
     # Rename the column names in the DataFrame.
     df.rename(columns = {"t": "bt",}, inplace = True)
@@ -20,8 +20,8 @@ def load_data():
     
 
     # Perform feature and target split
-    X = df[["sr","rr","bt","lm","bo","rem","sh","hr"]]
-    y = df['sl']
+    X = df[["pid","appid","gr","sd","ad","age","ng","sc","ht","db","al","hp","sr"]]
+    y = df['ns']
 
     return df, X, y
 
