@@ -20,7 +20,7 @@ def app(df, X, Y):
     st.markdown(
         """
             <p style="font-size:25px">
-                This app uses <b style="color:green">Decision Tree Classifier</b> for the Prediction of Stress Level.
+                <b style="color:green">Appointment Availability</b> Checker.
             </p>
         """, unsafe_allow_html=True)
     
@@ -29,36 +29,34 @@ def app(df, X, Y):
     st.subheader("Select Values:")
 
     # Take input of features from the user.
-    sr = st.slider("Snoring Rate", int(df["sr"].min()), int(df["sr"].max()))
-    rr = st.slider("Respiration Rate", int(df["rr"].min()), int(df["rr"].max()))
-    bt = st.slider("Body Temperature (in °F)", int(df["bt"].min()), int(df["bt"].max()))
-    lm = st.slider("Limb Movement", float(df["lm"].min()), float(df["lm"].max()))
-    bo = st.slider("Blood Oxygen(%)", float(df["bo"].min()), float(df["bo"].max()))
-    rem = st.slider("Rapid Eye Movement", float(df["rem"].min()), float(df["rem"].max()))
-    sh = st.slider("Sleeping Hour", float(df["sh"].min()), float(df["sh"].max()))
-    hr = st.slider("Heart Rate", float(df["hr"].min()), float(df["hr"].max()))
-    
+    PatientId = st.slider("PatientId", int(df["PatientId"].min()), int(df["PatientId"].max()))
+    AppointmentID = st.slider("AppointmentID", int(df["AppointmentID"].min()), int(df["AppointmentID"].max()))
+    Gender = st.slider("Gender", "M","F")
+    ScheduledDay = st.slider("ScheduledDay", float(df["ScheduledDay"].min()), float(df["ScheduledDay"].max()))
+    AppointmentDay= st.slider("AppointmentDay", float(df["AppointmentDay"].min()), float(df["AppointmentDay"].max()))
+    Age = st.slider("Age", float(df["Age"].min()), float(df["Age"].max()))
+    Neighbourhood = st.text_input("Neighbourhood")
+    Scholarship= st.slider("Scholarship", float(df["Scholarship"].min()), float(df["Scholarship"].max()))
+    Hipertension= st.slider("Hipertension", float(df["Hipertension"].min()), float(df["Hipertension"].max()))
+    Diabetes= st.slider("Diabetes", float(df["Diabetes"].min()), float(df["Diabetes"].max()))
+    Alcoholism= st.slider("Alcoholism", float(df["Alcoholism"].min()), float(df["Alcoholism"].max()))
+    Handcap= st.slider("Handcap", float(df["Handcap"].min()), float(df["Handcap"].max()))
+    SMS_received= st.slider("SMS_received", float(df["SMS_received"].min()), float(df["SMS_received"].max()))
 
     # Create a list to store all the features
-    features = [sr,rr,bt,lm,bo,rem,sh,hr]
+    features = [PatientId ,AppointmentID ,Gender,ScheduledDay,AppointmentDay,Age , Neighbourhood,Scholarship,Hipertension,Diabetes,Alcoholism,Handcap,SMS_received]
 
     # Create a button to predict
     if st.button("Predict"):
         # Get prediction and model score
         prediction, score = predict(X, Y, features)
-        st.info("Stress level detected...")
+        st.info("Checking Appointment Availability...")
 
         # Print the output according to the prediction
-        if (prediction == 1):
-            st.success("The person has low stress level 🙂")
-        elif (prediction == 2):
-            st.warning("The person has medium stress level 😐")
-        elif (prediction == 3):
-            st.error("The person has high stress level! 😞")
-        elif (prediction == 4):
-            st.error("The person has very high stress level!! 😫")
+        if (prediction == 'No'):
+            st.success("Appointment availabilty met")
         else:
-            st.success("The person is stress free and calm 😄")
+            st.error("Appointment schedule not available")
 
         # Print teh score of the model 
         st.write("The model used is trusted by doctor and has an accuracy of ", (score*100),"%")
