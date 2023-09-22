@@ -31,11 +31,7 @@ def app(df, X, Y):
     # Take input of features from the user.
     PatientId = st.slider("PatientId", int(df["PatientId"].min()), int(df["PatientId"].max()))
     AppointmentID = st.slider("AppointmentID", int(df["AppointmentID"].min()), int(df["AppointmentID"].max()))
-    Gender = st.text_input("Select Gender M and F")
-    ScheduledDay = st.text_input("ScheduledDay")
-    AppointmentDay= st.text_input("AppointmentDay")
     Age = st.slider("Age", float(df["Age"].min()), float(df["Age"].max()))
-    Neighbourhood = st.text_input("Neighbourhood")
     Scholarship= st.slider("Scholarship", float(df["Scholarship"].min()), float(df["Scholarship"].max()))
     Hipertension= st.slider("Hipertension", float(df["Hipertension"].min()), float(df["Hipertension"].max()))
     Diabetes= st.slider("Diabetes", float(df["Diabetes"].min()), float(df["Diabetes"].max()))
@@ -44,7 +40,7 @@ def app(df, X, Y):
     SMS_received= st.slider("SMS_received", float(df["SMS_received"].min()), float(df["SMS_received"].max()))
 
     # Create a list to store all the features
-    features = [PatientId ,AppointmentID ,Gender,ScheduledDay,AppointmentDay,Age , Neighbourhood,Scholarship,Hipertension,Diabetes,Alcoholism,Handcap,SMS_received]
+    features = [PatientId ,AppointmentID ,,Age,Scholarship,Hipertension,Diabetes,Alcoholism,Handcap,SMS_received]
 
     # Create a button to predict
     if st.button("Predict"):
